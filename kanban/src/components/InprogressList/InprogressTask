@@ -1,0 +1,18 @@
+/*import React from "react";
+import { Task } from "../Task";
+import { Todobuttons } from "./Todobuttons/Todobuttons.jsx";
+import "./todotask.css";
+
+export const Todotask = ({ task, assigned, state, id }) => {
+  return (
+    <div className="card">
+      
+      
+      <Task task={task} Assinged={assigned}></Task>
+      <span>
+        <label className="task__LAssing">Asigned To:</label>
+        <input className="task__TAssing" type="text" value={assigned} />
+    </span>
+    < /div>
+  );
+}*/

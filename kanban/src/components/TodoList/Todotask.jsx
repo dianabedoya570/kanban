@@ -1,13 +1,14 @@
 import React from "react";
-import { Task } from "../Task";
-import { Todobuttons } from "./Todobuttons/Todobuttons.jsx";
+
 import "./todotask.css";
 
-export const Todotask = ({ task, assigned, state, id }) => {
+export const Todotask = ({ textTask }) => {
   return (
     <div className="card">
-      <Task task={task} Assinged={assigned}></Task>
-      <Todobuttons />
+      <label className="task__LName">Task Name:</label>
+      <label className="task_TName">{textTask}</label>
+      <button className="todo__button__Assing">Assign</button>
+      <button className="todo__button_Remove">Remove</button>
     </div>
   );
 };

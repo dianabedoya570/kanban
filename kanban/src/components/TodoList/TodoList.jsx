@@ -2,12 +2,14 @@ import React from "react";
 import { Todotask } from "./Todotask";
 import "./todolist.css";
 
-export const TodoList = ({ task, assigned, state, id }) => {
+export const TodoList = ({ taskList = [] }) => {
   return (
     <div className="list">
       <h1>To Do</h1>
       <br></br>
-      <Todotask task={task} Assinged={assigned}></Todotask>
+      {taskList.map(function (item) {
+        return <Todotask textTask={item.task} key={item.task} />;
+      })}
     </div>
   );
 };

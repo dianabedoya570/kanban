@@ -1,18 +1,19 @@
 import React from "react";
 import "./task.css";
 
-function Task({ task, assigned, state, id }) {
+function Task({ setTextTask, textTask, id }) {
   return (
     <div className="task">
-      <span>
-        <label className="task__LName">Task Name:</label>
-        <input className="task_TName" type="text" value={task} />
-      </span>
-      <span>
-        <label className="task__LAssing">Asigned To:</label>
-        <input className="task__TAssing" type="text" value={assigned} />
-      </span>
+      <label className="task__LName">Task Name:</label>
+      <input
+        className="task_TName"
+        type="text"
+        value={textTask}
+        onChange={(event) => setTextTask(event.target.value)}
+      />
     </div>
   );
 }
+// onChange recibe una funcion para reemplazar la accion
+
 export default Task;
