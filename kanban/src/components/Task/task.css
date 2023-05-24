@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@800&family=Tilt+Neon&display=swap");
+
+.task {
+  display: flex;
+  flex-direction: column;
+  font-family: "Tilt Neon", cursive;
+  color: #1b1717;
+  font-size: 17px;
+  font-weight: bold;
+  margin: 10px 0 10px 0;
+  padding: 5px;
+}
