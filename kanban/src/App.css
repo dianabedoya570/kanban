@@ -1,8 +1,20 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+.Title {
+  justify-content: center;
+  font-family: "Tilt Neon", cursive;
+  color: #1b1717;
+  font-size: 24px;
+  font-weight: bold;
+}
+.newtask {
+  width: 100px;
+}
+
 .newTask__Button {
-  /* align-items: center;*/
   margin: 2px;
   appearance: none;
   background-color: #3eb2fd;
@@ -10,7 +22,10 @@
   color: #ffffff;
   font-family: CircularStd, sans-serif;
   font-size: 12px;
-  justify-content: center;
   text-align: center;
   text-decoration: none;
+}
+.kanbanlist {
+  display: flex;
+  flex-direction: row;
 }

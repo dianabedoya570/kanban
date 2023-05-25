@@ -23,15 +23,25 @@ function App() {
   //El estado para guardar el valor actual del elemento
   //y el handle para poder actualizar el valor
   const [textTask, setTextTask] = React.useState("");
+  const [listTodo, setListTodo] = React.useState([]);
 
-  function createNewTask(event) {
+  const createNewTask = (event) => {
     const objTask = {
       task: textTask,
       assigned: "no one",
       state: "to-do",
     };
-    taskList.push(objTask);
-  }
+    setListTodo([...listTodo, objTask]);
+    //console.log(taskList);
+    setTextTask("");
+  };
+  const removeTask = (textTask) => {
+    const taskAux = listTodo.filter((item) => item.task !== textTask);
+    setListTodo(taskAux);
+    console.log("En remove", taskAux);
+  };
+
+  const assignedTask = (textTask) => {};
 
   return (
     <div className="App">
@@ -44,7 +54,13 @@ function App() {
           New Task
         </button>
       </div>
-      <TodoList taskList={taskList}></TodoList>
+      <div className="kanbanlist">
+        <TodoList
+          listTodo={listTodo}
+          removeTask={removeTask}
+          assignedTask={assignedTask}
+        ></TodoList>
+      </div>
     </div>
   );
 }
