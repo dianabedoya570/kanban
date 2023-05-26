@@ -116,9 +116,25 @@ function App() {
     //setTextTask("");
   };
 
-  const removeTask = (textTask) => {
-    const taskAux = listTodo.filter((item) => item.task !== textTask);
-    setListTodo(taskAux);
+  const removeTask = async (textTask) => {
+    const taskAux = listTodo.filter((item) => item.task === textTask);
+    const { id } = taskAux[0];
+
+    // setListTodo(taskAux);
+
+    try {
+      const response = await fetch(`${baseURL}/tasks/${id}`, {
+        ///////////////////////////////////////1
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        const taskAux2 = listTodo.filter((item) => item.task !== textTask);
+        setListTodo(taskAux2);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const assignedTask = (textTask) => {
@@ -155,7 +171,10 @@ function App() {
       if (response.ok) {
         ///////////
         setListInprogress([...listInprogress, taskIP]);
-        removeTask(task);
+        //removeTask(task);
+        const taskAux = listTodo.filter((item) => item.task !== task);
+        setListTodo(taskAux);
+
         setTaskToAssing({});
       }
     } catch (error) {
