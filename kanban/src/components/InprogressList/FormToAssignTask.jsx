@@ -1,5 +1,5 @@
 import React from "react";
-import "./inprogresstask.css";
+import "./formtoassigntask.css";
 export const FormToAssignTask = ({ task, handleAssignTask, handleCancel }) => {
   const [assigned, setAssigned] = React.useState("");
 
@@ -9,6 +9,7 @@ export const FormToAssignTask = ({ task, handleAssignTask, handleCancel }) => {
         <label className="taskIPT__LName">Task Name:</label>
 
         <label className="taskIPT_TName">{task.task}</label>
+        <br />
         <label className="taskIPT__LAssigned">Assigned to:</label>
         <input
           className="taskIPT_TAssigned"

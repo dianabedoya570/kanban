@@ -3,7 +3,7 @@ import "./task.css";
 
 function Task({ setTextTask, textTask, id }) {
   return (
-    <div className="task">
+    <div className="taskCon">
       <label className="task__LName">Task Name:</label>
       <input
         className="task_TName"

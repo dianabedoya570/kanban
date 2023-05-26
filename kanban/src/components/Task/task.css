@@ -1,11 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@800&family=Tilt+Neon&display=swap");
 
-.task {
-  justify-content: center;
+.taskCon {
+  margin: 5%;
+  padding: 10px;
+  width: 350px;
   font-family: "Tilt Neon", cursive;
   color: #1b1717;
   font-size: 12px;
   font-weight: bold;
-  margin: 10px 0 10px 0;
-  padding: 5px;
+}
+.task__LName {
+  width: 90%;
+}
+
+.task_TName {
+  width: 340px;
 }

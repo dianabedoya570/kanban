@@ -1,31 +1,29 @@
-.card {
-  justify-content: flex-start;
-  display: flex;
-  flex-direction: column;
-  width: 340px;
-  padding: 3px;
-  margin: 2px;
-  border: 1px solid #230c8b;
+.task_IPT {
+  margin: 5%;
+  padding: 10px;
+  width: 350px;
   font-family: "Tilt Neon", cursive;
   color: #1b1717;
   font-size: 12px;
   font-weight: bold;
 }
-.taskField {
-  margin: 3px;
-}
-.task__LName {
+.taskIPT__LName {
   width: 100px;
-  height: 20px;
 }
 
-.task_TName {
-  width: 100px;
+.taskIPT_TName {
+  width: 200px;
 }
-.todo__button__Assing {
+.taskIPT__LAssigned {
+  width: 90%;
+}
+
+.taskIPT_TAssigned {
+  width: 340px;
+}
+.button__toAssing {
   /* align-items: center;*/
   margin: 2px;
-  width: 80px;
   appearance: none;
   background-color: #3eb2fd;
   border-radius: 100px;
@@ -37,10 +35,9 @@
   text-decoration: none;
 }
 
-.todo__button_Remove {
+.button_cancel {
   /* align-items: center;*/
   margin: 2px;
-  width: 80px;
   appearance: none;
   background-color: #f31414;
   border-radius: 100px;

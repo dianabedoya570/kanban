@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  margin: 0%;
 }
 .Title {
   justify-content: center;
@@ -15,9 +19,11 @@
 }
 
 .newTask__Button {
-  margin: 2px;
+  justify-self: flex-end;
+  margin: 10px 20px;
   appearance: none;
   background-color: #3eb2fd;
+  width: 50px;
   border-radius: 100px;
   color: #ffffff;
   font-family: CircularStd, sans-serif;
@@ -29,12 +35,22 @@
   display: flex;
   flex-direction: row;
 }
-.todo {
+.toDo {
   width: 30%;
+  height: 100vh;
+  margin: 2%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .inProgress {
   width: 30%;
+
+  height: 100vh;
+  margin: 2%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .done {
   width: 30%;
+  height: 100vh;
+  margin: 2%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
