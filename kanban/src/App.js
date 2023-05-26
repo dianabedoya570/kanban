@@ -6,6 +6,7 @@ import { TodoList } from "./components/TodoList/TodoList.jsx";
 import { Task } from "./components/Task";
 import { InProgressList } from "./components/InprogressList/InProgressList";
 import { FormToAssignTask } from "./components/InprogressList/FormToAssignTask.jsx";
+import { DoneList } from "./components/DoneList/DoneList";
 /*const taskList = [
   {
     task: "do the front-End",
@@ -66,12 +67,13 @@ function App() {
 
     setListInprogress([...listInprogress, taskIP]);
     removeTask(task);
+    setTaskToAssing({});
   };
   const handleTaskDone = (textTask) => {
     const taskdone = listInprogress.filter((item) => item.task === textTask);
     setListDone([...listDone, ...taskdone]);
     const taskAux = listInprogress.filter((item) => item.task !== textTask);
-    setListDone(taskAux);
+    setListInprogress(taskAux);
   };
 
   return (
@@ -109,6 +111,7 @@ function App() {
         </div>
         <div className="done">
           <h1>Done </h1>
+          <DoneList listDone={listDone}></DoneList>
         </div>
       </div>
     </div>
