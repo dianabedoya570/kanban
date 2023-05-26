@@ -1,5 +1,5 @@
 import React from "react";
-import { InProgressTask } from "./InProgressTask";
+import { InProgressTask } from "./InprogressTask";
 
 import "./inprogresslist.css";
 
