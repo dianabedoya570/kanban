@@ -30,6 +30,7 @@ function App() {
   const [listInprogress, setListInprogress] = React.useState([]);
   const [listDone, setListDone] = React.useState([]);
   const [tasktoAssing, setTaskToAssing] = React.useState({});
+  const [showForm, setShowForm] = React.useState(false);
 
   async function loadKanban() {
     try {
@@ -140,7 +141,7 @@ function App() {
   const assignedTask = (textTask) => {
     const activeTask = listTodo.filter((item) => item.task === textTask);
     setTaskToAssing(...activeTask);
-
+    setShowForm(true);
     //removeTask(textTask);tasktoAssi
   };
 
@@ -148,7 +149,7 @@ function App() {
     setTaskToAssing({});
   };
 
-  const handleAssignTask = async (ntaskIP, assignedN) => {
+  const handleAssignTask = async (ntaskIP, assignedN, setAssigned) => {
     let { id, task, assigned, state } = ntaskIP;
     assigned = assignedN;
     state = "in-progress";
@@ -176,6 +177,8 @@ function App() {
         setListTodo(taskAux);
 
         setTaskToAssing({});
+        setAssigned("");
+        setShowForm(false);
       }
     } catch (error) {
       console.error(error);
@@ -243,11 +246,13 @@ function App() {
         </div>
         <div className="inProgress">
           <h1>In Progress </h1>
-          <FormToAssignTask
-            task={tasktoAssing}
-            handleAssignTask={handleAssignTask}
-            handleCancel={handleCancel}
-          ></FormToAssignTask>
+          {showForm && (
+            <FormToAssignTask
+              task={tasktoAssing}
+              handleAssignTask={handleAssignTask}
+              handleCancel={handleCancel}
+            ></FormToAssignTask>
+          )}
           <InProgressList
             listInprogrress={listInprogress}
             handleTaskDone={handleTaskDone}

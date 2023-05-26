@@ -21,7 +21,7 @@ export const FormToAssignTask = ({ task, handleAssignTask, handleCancel }) => {
         <div className="task_IPT_button">
           <button
             className="button__toAssing"
-            onClick={() => handleAssignTask(task, assigned)}
+            onClick={() => handleAssignTask(task, assigned, setAssigned)}
           >
             Assing
           </button>
