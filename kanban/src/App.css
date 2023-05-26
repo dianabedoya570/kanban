@@ -29,3 +29,12 @@
   display: flex;
   flex-direction: row;
 }
+.todo {
+  width: 30%;
+}
+.inProgress {
+  width: 30%;
+}
+.done {
+  width: 30%;
+}

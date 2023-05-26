@@ -4,8 +4,9 @@ import "./App.css";
 
 import { TodoList } from "./components/TodoList/TodoList.jsx";
 import { Task } from "./components/Task";
-
-const taskList = [
+import { InProgressList } from "./components/InprogressList/InProgressList";
+import { FormToAssignTask } from "./components/InprogressList/FormToAssignTask.jsx";
+/*const taskList = [
   {
     task: "do the front-End",
     assigned: "no one",
@@ -16,7 +17,7 @@ const taskList = [
     assigned: "none",
     state: "to-do",
   },
-];
+];*/
 //let index = 1;
 
 function App() {
@@ -24,7 +25,9 @@ function App() {
   //y el handle para poder actualizar el valor
   const [textTask, setTextTask] = React.useState("");
   const [listTodo, setListTodo] = React.useState([]);
-
+  const [listInprogress, setListInprogress] = React.useState([]);
+  const [listDone, setListDone] = React.useState([]);
+  const [tasktoAssing, setTaskToAssing] = React.useState({});
   const createNewTask = (event) => {
     const objTask = {
       task: textTask,
@@ -38,28 +41,75 @@ function App() {
   const removeTask = (textTask) => {
     const taskAux = listTodo.filter((item) => item.task !== textTask);
     setListTodo(taskAux);
-    console.log("En remove", taskAux);
   };
 
-  const assignedTask = (textTask) => {};
+  const assignedTask = (textTask) => {
+    const activeTask = listTodo.filter((item) => item.task === textTask);
+    setTaskToAssing(...activeTask);
+
+    //removeTask(textTask);tasktoAssi
+  };
+
+  const handleCancel = () => {
+    setTaskToAssing({});
+  };
+
+  const handleAssignTask = (ntaskIP, assignedN) => {
+    let { task, assigned, state } = ntaskIP;
+    assigned = assignedN;
+    state = "in-progress";
+    const taskIP = {
+      task,
+      assigned,
+      state,
+    };
+
+    setListInprogress([...listInprogress, taskIP]);
+    removeTask(task);
+  };
+  const handleTaskDone = (textTask) => {
+    const taskdone = listInprogress.filter((item) => item.task === textTask);
+    setListDone([...listDone, ...taskdone]);
+    const taskAux = listInprogress.filter((item) => item.task !== textTask);
+    setListDone(taskAux);
+  };
 
   return (
     <div className="App">
       <div className="Title">
         <h1>KANBAN BOARD</h1>
       </div>
-      <div className="newtask">
-        <Task setTextTask={setTextTask} textTask={textTask}></Task>
-        <button className="newTask__Button" onClick={createNewTask}>
-          New Task
-        </button>
-      </div>
+
       <div className="kanbanlist">
-        <TodoList
-          listTodo={listTodo}
-          removeTask={removeTask}
-          assignedTask={assignedTask}
-        ></TodoList>
+        <div className="toDo">
+          <h1>To Do</h1>
+          <div className="newtask">
+            <Task setTextTask={setTextTask} textTask={textTask}></Task>
+            <button className="newTask__Button" onClick={createNewTask}>
+              New Task
+            </button>
+          </div>
+          <TodoList
+            listTodo={listTodo}
+            removeTask={removeTask}
+            assignedTask={assignedTask}
+          ></TodoList>
+        </div>
+        <div className="inProgress">
+          <h1>In Progress </h1>
+          <FormToAssignTask
+            task={tasktoAssing}
+            handleAssignTask={handleAssignTask}
+            handleCancel={handleCancel}
+          ></FormToAssignTask>
+          <InProgressList
+            listInprogrress={listInprogress}
+            handleTaskDone={handleTaskDone}
+          ></InProgressList>
+        </div>
+        <div className="done">
+          <h1>Done </h1>
+        </div>
       </div>
     </div>
   );

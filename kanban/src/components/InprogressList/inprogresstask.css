@@ -1,0 +1,58 @@
+.task_IPT {
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 2%;
+  border: 1px solid #230c8b;
+  font-family: "Tilt Neon", cursive;
+  color: #1b1717;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 25px 100px 0;
+  padding: 5px;
+}
+
+.taskIPT__LName {
+  width: 100px;
+}
+
+.taskIPT_TName {
+  width: 100px;
+}
+.taskIPT__LAssigned {
+  width: 100px;
+}
+.task_IPT_button {
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
+}
+
+.todo__button__toAssing {
+  /* align-items: center;*/
+  margin: 2px;
+  appearance: none;
+  background-color: #3eb2fd;
+  border-radius: 100px;
+  color: #ffffff;
+  font-family: CircularStd, sans-serif;
+  font-size: 12px;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+}
+
+.todo__button_done {
+  /* align-items: center;*/
+  margin: 2px;
+  appearance: none;
+  background-color: #950bd4;
+  border-radius: 100px;
+  color: #ffffff;
+  font-family: CircularStd, sans-serif;
+  font-size: 12px;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+}
