@@ -1,6 +1,6 @@
 import React from "react";
 import "./inprogresstask.css";
-export const InProgressTask = ({ textTask, assignedName, handleTaskDone }) => {
+export const InProgressTask1 = ({ textTask, assignedName, handleTaskDone }) => {
   return (
     <div className="inprogress">
       <span className="name">

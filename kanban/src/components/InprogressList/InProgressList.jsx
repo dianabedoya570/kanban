@@ -1,5 +1,5 @@
 import React from "react";
-import { InProgressTask } from "./InProgressTask.jsx";
+import { InProgressTask1 } from "./InProgressTask1";
 
 import "./inprogresslist.css";
 
@@ -9,7 +9,7 @@ export const InProgressList = ({ listInprogrress = [], handleTaskDone }) => {
       {listInprogrress.map(function (item) {
         console.log("tarea en progreso", item.task);
         return (
-          <InProgressTask
+          <InProgressTask1
             textTask={item.task}
             key={item.task}
             assignedName={item.assigned}
