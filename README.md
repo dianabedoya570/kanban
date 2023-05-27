@@ -30,6 +30,6 @@ that allows performing CRUD operations with an in-memory database system.
 -Express https://api-todo-list-k6yy.onrender.com/
 -Deployed https://mi-kanban-board.onrender.com/
 
-- [Authors](#author)
+### Authors](#author)
 Diana Bedoya https://github.com/dianabedoya570 
 Welinton Suarez https://github.com/wesgdev1
